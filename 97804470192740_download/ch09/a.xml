@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE list [
+  <!ELEMENT list (a)*>
+  <!ELEMENT a EMPTY>
+  <!ATTLIST a id ID #REQUIRED>
+]>
+<list>
+  <a id="Z123">123</a>
+  <a id="X567">567</a>
+  <a id="Q873">873</a>
+  <a id="G840">840</a>
+</list>

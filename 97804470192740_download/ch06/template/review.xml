@@ -1,0 +1,25 @@
+<review>
+<event>
+  <venue>Wigmore Hall</venue>
+  <city>London</city>
+  <date>2007-03-27</date>
+  <artist>Carducci String Quartet</artist>
+</event>
+<text>
+  <para>Back at the <venue>Wigmore Hall</venue> on <date iso="2007-03-27">27 March</date> another fine group, 
+  the <artist>Carducci Quartet</artist>, was joined by pianist <artist>Nicola Eimer</artist> for a programme of 
+  <composer>Mozart</composer>, <composer>Ravel</composer> and <composer>Schumann</composer>. Following the current 
+  fashion for the chamber versions of <composer>Mozart</composer> concertos, the players opened with a lively and 
+  shapely performance of his <work composer="Mozart" opus="K414">A major Concerto K414</work>. <composer>Ravel</composer>'s 
+  <work composer="Ravel">Quartet</work>, which followed, received a kaleidoscopic performance, exquisite and restless, 
+  pushing urgently through its constantly changing emotional landscape, the many tricky corners negotiated with 
+  perfectly judged rubato. For all its beauty, this was a muscular reading. Their performance of 
+  <composer>Schumann</composer>'s <work composer="Schumann" opus="44">Piano Quintet</work> was one of constant intelligence, 
+  in which repeats and recapitulations were always re-examined.</para>
+</text>
+<byline>
+  <author>Tim Homfray</author>
+  <publication>The Strad</publication>
+  <date iso="2007-06">June 2007</date>
+</byline>
+</review>  

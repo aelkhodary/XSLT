@@ -1,0 +1,723 @@
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+
+ <xsd:element name='GEDCOM'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='HeaderRec'/>
+    <xsd:element ref='FamilyRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='IndividualRec' maxOccurs='unbounded'/>
+    <xsd:element ref='EventRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='LDSOrdRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='ContactRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='SourceRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='RepositoryRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='GroupRec' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='HeaderRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='FileCreation'/>
+    <xsd:element ref='Citation' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Submitter'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='FamilyRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='HusbFath' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='WifeMoth' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Child' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='BasedOn' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='IndividualRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='IndivName' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Gender' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='DeathStatus' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='PersInfo' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='AssocIndiv' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='DupIndiv' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='EventRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Participant' maxOccurs='unbounded'/>
+    <xsd:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Place' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Religion' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' type='xsd:string' use='required'/>
+   <xsd:attribute name='VitalType' use='optional'>
+    <xsd:simpleType>
+     <xsd:restriction base='xsd:string'>
+      <xsd:enumeration value='birth'/>
+      <xsd:enumeration value='marriage'/>
+      <xsd:enumeration value='divorce'/>
+      <xsd:enumeration value='death'/>
+     </xsd:restriction>
+    </xsd:simpleType>
+   </xsd:attribute>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='LDSOrdRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Participant' maxOccurs='unbounded'/>
+    <xsd:element ref='OrdStat' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='TempleCode' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Place' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='BasedOn' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' use='required'>
+    <xsd:simpleType>
+     <xsd:restriction base='xsd:string'>
+      <xsd:enumeration value='B'/>
+      <xsd:enumeration value='C'/>
+      <xsd:enumeration value='E'/>
+      <xsd:enumeration value='SM'/>
+      <xsd:enumeration value='SP'/>
+      <xsd:enumeration value='SS'/>
+      <xsd:enumeration value='TO'/>
+      <xsd:enumeration value='W'/>
+     </xsd:restriction>
+    </xsd:simpleType>
+   </xsd:attribute>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ContactRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Name'/>
+    <xsd:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Public' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='SameIndiv' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='SourceRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Repository' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Title'/>
+    <xsd:element ref='Article' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Author' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Publishing' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='RepositoryRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Name'/>
+    <xsd:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='GroupRec'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Name'/>
+    <xsd:element ref='Contact' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Member' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='ParentGroup' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='Id' type='xsd:ID' use='required'/>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Addressee' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='AddrLine'>
+  <xsd:complexType mixed='true'>
+   <xsd:choice minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='Addressee'/>
+    <xsd:element ref='PlacePart'/>
+   </xsd:choice>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Age' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Article' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Association' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='AssocIndiv'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Association'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Author' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='b' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='BasedOn'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='blockquote' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='br'>
+  <xsd:complexType/>
+ </xsd:element>
+
+ <xsd:element name='CallNbr' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Caption' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='center' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Changed'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Contact' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+   <xsd:attribute name='Date' type='xsd:string' use='required'/>
+   <xsd:attribute name='Time' type='xsd:string' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Child'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='ChildNbr' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='RelToFath' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='RelToMoth' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ChildNbr' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Citation'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Caption' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='WhereInSource' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='WhenRecorded' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Extract' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Contact'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Coordinates' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Copyright' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Date'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='Calendar' type='xsd:string' use='optional'/>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='DeathStatus' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='DupIndiv'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xsd:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Email' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Enrichment'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Evidence'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ExternalID'>
+  <xsd:complexType>
+   <xsd:attribute name='Type' type='xsd:string' use='required'/>
+   <xsd:attribute name='Id' type='xsd:string' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Extract'>
+  <xsd:complexType mixed='true'>
+   <xsd:choice minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='u'/>
+    <xsd:element ref='b'/>
+    <xsd:element ref='i'/>
+    <xsd:element ref='blockquote'/>
+    <xsd:element ref='br'/>
+    <xsd:element ref='p'/>
+    <xsd:element ref='sub'/>
+    <xsd:element ref='sup'/>
+    <xsd:element ref='center'/>
+   </xsd:choice>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='FamilyNbr' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='FileCreation'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Product' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Copyright' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+   <xsd:attribute name='Date' type='xsd:string' use='required'/>
+   <xsd:attribute name='Time' type='xsd:string' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Gender' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='HusbFath'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='FamilyNbr' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='i' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='IndivName'>
+  <xsd:complexType mixed='true'>
+   <xsd:choice minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='NamePart'/>
+    <xsd:element ref='IndNameVariation'/>
+   </xsd:choice>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   <xsd:attribute name='Method' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='IndNameVariation'>
+  <xsd:complexType mixed='true'>
+   <xsd:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='NamePart'/>
+   </xsd:sequence>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   <xsd:attribute name='Method' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Information' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Link'>
+  <xsd:complexType>
+   <xsd:attribute name='Target' type='xsd:string' use='required'/>
+   <xsd:attribute name='Ref' type='xsd:IDREF' use='required'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Living' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='MailAddress'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='AddrLine' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Member'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Role' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Name'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='NamePart'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='Type' type='xsd:string' use='required'/>
+   <xsd:attribute name='Level' type='xsd:string' use='optional'/>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Note'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='OrdStat'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Date' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+   <xsd:attribute name='Code' use='required'>
+    <xsd:simpleType>
+     <xsd:restriction base='xsd:string'>
+      <xsd:enumeration value='bic'/>
+      <xsd:enumeration value='canceled'/>
+      <xsd:enumeration value='child'/>
+      <xsd:enumeration value='cleared'/>
+      <xsd:enumeration value='completed'/>
+      <xsd:enumeration value='dns'/>
+      <xsd:enumeration value='qualified'/>
+      <xsd:enumeration value='stillborn'/>
+      <xsd:enumeration value='submitted'/>
+      <xsd:enumeration value='uncleared'/>
+     </xsd:restriction>
+    </xsd:simpleType>
+   </xsd:attribute>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='p' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='ParentGroup'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Participant'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Role' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Living' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Age' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='PersInfo'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Information' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Place' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Phone'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Place'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='PlaceName' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Coordinates' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='PlaceNameVar' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='PlaceName'>
+  <xsd:complexType mixed='true'>
+   <xsd:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='PlacePart'/>
+   </xsd:sequence>
+   <xsd:attribute name='Method' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='PlaceNameVar'>
+  <xsd:complexType mixed='true'>
+   <xsd:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xsd:element ref='PlacePart'/>
+   </xsd:sequence>
+   <xsd:attribute name='Method' type='xsd:string' use='optional'/>
+   <xsd:attribute name='xml:lang' type='xsd:NMTOKEN' use='optional'/>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='PlacePart'>
+  <xsd:complexType>
+  <xsd:simpleContent>
+  <xsd:extension base='xsd:string'>
+   <xsd:attribute name='Type' type='xsd:string' use='optional'/>
+   <xsd:attribute name='Level' use='optional'>
+    <xsd:simpleType>
+     <xsd:restriction base='xsd:string'>
+      <xsd:enumeration value='1'/>
+      <xsd:enumeration value='2'/>
+      <xsd:enumeration value='3'/>
+      <xsd:enumeration value='4'/>
+      <xsd:enumeration value='5'/>
+      <xsd:enumeration value='6'/>
+      <xsd:enumeration value='7'/>
+     </xsd:restriction>
+    </xsd:simpleType>
+   </xsd:attribute>
+   </xsd:extension>
+   </xsd:simpleContent>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Product'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='ProductId' minOccurs='0' maxOccurs='1'/>
+    <xsd:element ref='Version'/>
+    <xsd:element ref='Name'/>
+    <xsd:element ref='Supplier' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='ProductId' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Public' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Publishing' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Religion' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='RelToFath' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='RelToMoth' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Repository'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='CallNbr' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='Role' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='SameIndiv'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='sub' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Submitter'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='sup' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Supplier'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name='TempleCode' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Title' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='u' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='URI' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='Version' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='WhenRecorded' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='WhereInSource' type='xsd:string'>
+ </xsd:element>
+
+ <xsd:element name='WifeMoth'>
+  <xsd:complexType>
+   <xsd:sequence>
+    <xsd:element ref='Link'/>
+    <xsd:element ref='FamilyNbr' minOccurs='0' maxOccurs='1'/>
+   </xsd:sequence>
+  </xsd:complexType>
+ </xsd:element>
+</xsd:schema>

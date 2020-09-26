@@ -1,0 +1,43 @@
+<xs:schema targetNamespace="http://ns.megacorp.com/hr"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:hr="http://ns.megacorp.com/hr">
+
+<xs:element name="employees">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="hr:employee" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+           
+<xs:element name="employee">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="department" type="xs:string"/>
+      <xs:element name="date-of-joining" type="xs:date"/>
+    </xs:sequence>
+    <xs:attribute name="nr" type="xs:ID"/>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="departments">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="hr:department" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="department">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="manager-nr" type="xs:NCName"/>
+    </xs:sequence>
+    <xs:attribute name="dept-nr" type="xs:ID"/>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>           

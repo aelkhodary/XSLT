@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<my:doc xmlns:my="http://mhk.me.uk/some.uri" security="high"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="my:dateType">2008-01-01</my:doc>
+ 

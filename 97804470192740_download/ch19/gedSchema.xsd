@@ -1,0 +1,690 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+
+ <xs:import namespace="http://www.w3.org/XML/1998/namespace" 
+            schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+ <xs:element name='GEDCOM'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='HeaderRec'/>
+    <xs:element ref='FamilyRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='IndividualRec' maxOccurs='unbounded'/>
+    <xs:element ref='EventRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='LDSOrdRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='ContactRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='SourceRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='RepositoryRec' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='GroupRec' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='HeaderRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='FileCreation'/>
+    <xs:element ref='Citation' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Submitter'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='FamilyRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='HusbFath' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='WifeMoth' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Child' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='BasedOn' minOccurs='0' maxOccurs='1'/>
+    <xs:group ref="CommonFields"/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='IndividualRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='IndivName' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Gender' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='DeathStatus' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='PersInfo' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='AssocIndiv' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='DupIndiv' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:group ref="CommonFields"/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='EventRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Participant' maxOccurs='unbounded'/>
+    <xs:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Place' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Religion' minOccurs='0' maxOccurs='1'/>
+    <xs:group ref="CommonFields"/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' type='xs:string' use='required'/>
+   <xs:attribute name='VitalType' type='VitalTypeType' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='LDSOrdRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Participant' maxOccurs='unbounded'/>
+    <xs:element ref='OrdStat' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='TempleCode' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Place' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='BasedOn' minOccurs='0' maxOccurs='1'/>
+    <xs:group ref="CommonFields"/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' use='required'>
+    <xs:simpleType>
+     <xs:restriction base='xs:string'>
+      <xs:enumeration value='B'/>
+      <xs:enumeration value='C'/>
+      <xs:enumeration value='E'/>
+      <xs:enumeration value='SM'/>
+      <xs:enumeration value='SP'/>
+      <xs:enumeration value='SS'/>
+      <xs:enumeration value='TO'/>
+      <xs:enumeration value='W'/>
+     </xs:restriction>
+    </xs:simpleType>
+   </xs:attribute>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='ContactRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Name'/>
+    <xs:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Public' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='SameIndiv' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='SourceRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Repository' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Title'/>
+    <xs:element ref='Article' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Author' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Publishing' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='RepositoryRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Name'/>
+    <xs:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='GroupRec'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Name'/>
+    <xs:element ref='Contact' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Member' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='ParentGroup' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='MailAddress' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Phone' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Email' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='URI' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:group ref="CommonFields"/>
+   </xs:sequence>
+   <xs:attribute name='Id' type='xs:ID' use='required'/>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Addressee' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='AddrLine'>
+  <xs:complexType mixed='true'>
+   <xs:choice minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='Addressee'/>
+    <xs:element ref='PlacePart'/>
+   </xs:choice>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Age' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='Article' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='Association' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='AssocIndiv'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Association'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Author' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='b' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='BasedOn'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='blockquote' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='br'>
+  <xs:complexType/>
+ </xs:element>
+
+ <xs:element name='CallNbr' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='Caption' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='center' type='xs:string'>
+ </xs:element>
+
+ <xs:element name='Changed'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Contact' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+   <xs:attribute name='Date' type='StandardDate' use='required'/>
+   <xs:attribute name='Time' type='TimeType' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Child' type="ChildType"/>
+
+ <xs:element name='ChildNbr' type='xs:string'/>
+
+ <xs:element name='Citation'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Caption' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='WhereInSource' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='WhenRecorded' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Extract' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Contact' type="BasicLinkType"/>
+
+ <xs:element name='Coordinates' type='xs:string'/>
+
+ <xs:element name='Copyright' type='xs:string'/>
+
+ <xs:element name='Date' type="DateType"/>
+
+ <xs:element name='DeathStatus' type='xs:string'/>
+
+ <xs:element name='DupIndiv'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+    <xs:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Email' type='xs:string'/>
+
+ <xs:element name='Enrichment'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Evidence'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Citation' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='ExternalID'>
+  <xs:complexType>
+   <xs:attribute name='Type' type='xs:string' use='required'/>
+   <xs:attribute name='Id' type='xs:string' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Extract'>
+  <xs:complexType mixed='true'>
+   <xs:choice minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='u'/>
+    <xs:element ref='b'/>
+    <xs:element ref='i'/>
+    <xs:element ref='blockquote'/>
+    <xs:element ref='br'/>
+    <xs:element ref='p'/>
+    <xs:element ref='sub'/>
+    <xs:element ref='sup'/>
+    <xs:element ref='center'/>
+   </xs:choice>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='FamilyNbr' type='xs:string'/>
+
+ <xs:element name='FileCreation'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Product' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Copyright' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+   <xs:attribute name='Date' type='StandardDate' use='required'/>
+   <xs:attribute name='Time' type='TimeType' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Gender' type='xs:string'/>
+
+ <xs:element name='HusbFath' type="ParentType"/>
+
+ <xs:element name='i' type='xs:string'/>
+
+ <xs:element name='IndivName'>
+  <xs:complexType mixed='true'>
+   <xs:choice minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='NamePart'/>
+    <xs:element ref='IndNameVariation'/>
+   </xs:choice>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   <xs:attribute name='Method' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='IndNameVariation'>
+  <xs:complexType mixed='true'>
+   <xs:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='NamePart'/>
+   </xs:sequence>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   <xs:attribute name='Method' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Information' type='xs:string'/>
+
+ <xs:element name='Link'>
+  <xs:complexType>
+   <xs:attribute name='Target' type='xs:string' use='required'/>
+   <xs:attribute name='Ref' type='xs:IDREF' use='required'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Living' type='xs:string'/>
+
+ <xs:element name='MailAddress'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='AddrLine' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Member'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Role' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Name'>
+  <xs:complexType>
+  <xs:simpleContent>
+  <xs:extension base='xs:string'>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+   </xs:extension>
+   </xs:simpleContent>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='NamePart'>
+  <xs:complexType>
+  <xs:simpleContent>
+  <xs:extension base='xs:string'>
+   <xs:attribute name='Type' type='xs:string' use='required'/>
+   <xs:attribute name='Level' type='xs:string' use='optional'/>
+   </xs:extension>
+   </xs:simpleContent>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Note'>
+  <xs:complexType>
+  <xs:simpleContent>
+  <xs:extension base='xs:string'>
+   <xs:attribute ref='xml:lang' use='optional'/>
+   </xs:extension>
+   </xs:simpleContent>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='OrdStat'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Date' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+   <xs:attribute name='Code' use='required'>
+    <xs:simpleType>
+     <xs:restriction base='xs:string'>
+      <xs:enumeration value='bic'/>
+      <xs:enumeration value='canceled'/>
+      <xs:enumeration value='child'/>
+      <xs:enumeration value='cleared'/>
+      <xs:enumeration value='completed'/>
+      <xs:enumeration value='dns'/>
+      <xs:enumeration value='qualified'/>
+      <xs:enumeration value='stillborn'/>
+      <xs:enumeration value='submitted'/>
+      <xs:enumeration value='uncleared'/>
+     </xs:restriction>
+    </xs:simpleType>
+   </xs:attribute>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='p' type='xs:string'/>
+
+ <xs:element name='ParentGroup'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Participant'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Role' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Living' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Age' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='PersInfo'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Information' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Date' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Place' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Phone'>
+  <xs:complexType>
+  <xs:simpleContent>
+  <xs:extension base='xs:string'>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   </xs:extension>
+   </xs:simpleContent>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Place'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='PlaceName' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Coordinates' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='PlaceNameVar' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='PlaceName'>
+  <xs:complexType mixed='true'>
+   <xs:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='PlacePart'/>
+   </xs:sequence>
+   <xs:attribute name='Method' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='PlaceNameVar'>
+  <xs:complexType mixed='true'>
+   <xs:sequence minOccurs='0' maxOccurs='unbounded'>
+    <xs:element ref='PlacePart'/>
+   </xs:sequence>
+   <xs:attribute name='Method' type='xs:string' use='optional'/>
+   <xs:attribute ref='xml:lang' use='optional'/>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='PlacePart'>
+  <xs:complexType>
+  <xs:simpleContent>
+  <xs:extension base='xs:string'>
+   <xs:attribute name='Type' type='xs:string' use='optional'/>
+   <xs:attribute name='Level' use='optional'>
+    <xs:simpleType>
+     <xs:restriction base='xs:string'>
+      <xs:enumeration value='1'/>
+      <xs:enumeration value='2'/>
+      <xs:enumeration value='3'/>
+      <xs:enumeration value='4'/>
+      <xs:enumeration value='5'/>
+      <xs:enumeration value='6'/>
+      <xs:enumeration value='7'/>
+     </xs:restriction>
+    </xs:simpleType>
+   </xs:attribute>
+   </xs:extension>
+   </xs:simpleContent>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Product'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='ProductId' minOccurs='0' maxOccurs='1'/>
+    <xs:element ref='Version'/>
+    <xs:element ref='Name'/>
+    <xs:element ref='Supplier' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='ProductId' type='xs:string'/>
+
+ <xs:element name='Public' type='xs:string'/>
+
+ <xs:element name='Publishing' type='xs:string'/>
+
+ <xs:element name='Religion' type='xs:string'/>
+
+ <xs:element name='RelToFath' type='xs:string'/>
+
+ <xs:element name='RelToMoth' type='xs:string'/>
+
+ <xs:element name='Repository'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='CallNbr' minOccurs='0' maxOccurs='1'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='Role' type='xs:string'/>
+
+ <xs:element name='SameIndiv'>
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element ref='Link'/>
+    <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:element name='sub' type='xs:string'/>
+
+ <xs:element name='Submitter' type="BasicLinkType"/>
+
+ <xs:element name='sup' type='xs:string'/>
+
+ <xs:element name='Supplier' type="BasicLinkType"/>
+
+ <xs:element name='TempleCode' type='xs:string'/>
+
+ <xs:element name='Title' type='xs:string'/>
+
+ <xs:element name='u' type='xs:string'/>
+
+ <xs:element name='URI' type='xs:string'/>
+
+ <xs:element name='Version' type='xs:string'/>
+
+ <xs:element name='WhenRecorded' type='xs:string'/>
+
+ <xs:element name='WhereInSource' type='xs:string'/>
+
+ <xs:element name='WifeMoth' type="ParentType"/>
+ 
+ <xs:group name="CommonFields">
+   <xs:sequence>
+     <xs:element ref='ExternalID' minOccurs='0' maxOccurs='unbounded'/>
+     <xs:element ref='Submitter' minOccurs='0' maxOccurs='1'/>
+     <xs:element ref='Note' minOccurs='0' maxOccurs='unbounded'/>
+     <xs:element ref='Evidence' minOccurs='0' maxOccurs='unbounded'/>
+     <xs:element ref='Enrichment' minOccurs='0' maxOccurs='unbounded'/>
+     <xs:element ref='Changed' minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>  
+ </xs:group>
+
+  <xs:complexType name="BasicLinkType">
+   <xs:sequence>
+    <xs:element ref='Link'/>
+   </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ChildType">
+    <xs:complexContent>
+      <xs:extension base="BasicLinkType">
+        <xs:sequence>
+          <xs:element ref='ChildNbr' minOccurs='0' maxOccurs='1'/>
+          <xs:element ref='RelToFath' minOccurs='0' maxOccurs='1'/>
+          <xs:element ref='RelToMoth' minOccurs='0' maxOccurs='1'/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>      
+  </xs:complexType>
+ 
+	<xs:complexType name="DateType">
+		<xs:simpleContent>
+			<xs:extension base="GeneralDate">
+				<xs:attribute name="Calendar" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType> 
+ 
+	<xs:simpleType name="GeneralDate">
+	    <xs:union memberTypes="StandardDate xs:string"/>
+	</xs:simpleType>
+	
+  <xs:complexType name="ParentType">
+    <xs:complexContent>
+      <xs:extension base="BasicLinkType">
+        <xs:sequence>
+          <xs:element ref='FamilyNbr' minOccurs='0' maxOccurs='1'/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>    
+  </xs:complexType>
+	
+	<xs:simpleType name="StandardDate">
+	    <xs:restriction base="xs:string">
+	        <xs:pattern value="[0-9]?[0-9]\s(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\s[0-9]{4}"/>
+	    </xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="TimeType">
+	    <xs:restriction base="xs:normalizedString">
+	        <!-- can't use xs:time because seconds are optional -->
+	        <xs:pattern value="[0-9][0-9]:[0-9][0-9](:[0-9][0-9](\.[0-9]*)?)?"/>
+	    </xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="VitalTypeType">
+    <xs:restriction base='xs:string'>
+      <xs:enumeration value='birth'/>
+      <xs:enumeration value='marriage'/>
+      <xs:enumeration value='divorce'/>
+      <xs:enumeration value='death'/>
+    </xs:restriction>
+  </xs:simpleType>		     
+ 
+</xs:schema>

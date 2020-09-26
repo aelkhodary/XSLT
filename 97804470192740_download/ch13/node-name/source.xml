@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="iso-8859-1"?>
+<soap:Envelope xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'
+      xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  <soap:Body>
+    <echoString xmlns='http://example.com/soapdemo'
+                xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+      <inputString xsi:type='xs:string'>Hello</inputString>
+    </echoString>
+  </soap:Body>
+</soap:Envelope>
+

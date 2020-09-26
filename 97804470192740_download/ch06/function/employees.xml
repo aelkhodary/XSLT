@@ -1,0 +1,17 @@
+<employees xmlns="http://ns.megacorp.com/hr">
+  <employee nr="E12345">
+    <name>John Smith</name>
+    <department>D001</department>
+    <date-of-joining>2006-04-22</date-of-joining>
+  </employee>
+  <employee nr="E99222">
+    <name>Mary Jones</name>
+    <department>D002</department>
+    <date-of-joining>1988-01-15</date-of-joining>
+  </employee> 
+  <employee nr="E77733">
+    <name>Susan Evans</name>
+    <department>D002</department>
+    <date-of-joining>1999-11-16</date-of-joining>
+  </employee>   
+</employees>   

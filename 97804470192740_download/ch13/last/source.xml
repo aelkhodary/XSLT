@@ -1,0 +1,10 @@
+<countries>
+  <country name="France" capital="Paris" continent="Europe"/>
+  <country name="Germany" capital="Berlin" continent="Europe"/>
+  <country name="Spain" capital="Madrid" continent="Europe"/>
+  <country name="Italy" capital="Rome" continent="Europe"/>
+  <country name="Poland" capital="Warsaw" continent="Europe"/>
+  <country name="Egypt" capital="Cairo" continent="Africa"/>
+  <country name="Libya" capital="Tripoli" continent="Africa"/>
+  <country name="Nigeria" capital="Lagos" continent="Africa"/>
+</countries>

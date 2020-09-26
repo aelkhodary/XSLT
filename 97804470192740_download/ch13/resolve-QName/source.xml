@@ -1,0 +1,7 @@
+<doc xmlns:one='http://mhk.me.uk/one.uri' xmlns='http://mhk.me.uk/default.uri'>
+   <data-zero>title</data-zero>
+   <chap xmlns='' att-one='text'>
+    <data-one>one:value</data-one>
+    <data-two>value</data-two>
+  </chap>
+</doc>

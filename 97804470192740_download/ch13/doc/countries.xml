@@ -1,0 +1,8 @@
+<countries>
+   <country name="France" code="fr"/>
+   <country name="Germany" code="de"/>
+   <country name="Ireland" code="ie"/>   
+   <country name="Italy" code="it"/>
+   <country name="Spain" code="es"/>
+   <country name="United Kingdom" code="gb"/>
+ </countries>

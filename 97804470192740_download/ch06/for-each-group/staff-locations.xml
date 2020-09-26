@@ -1,0 +1,19 @@
+<staff>
+  <employee name="John Jones" 
+            department="sales" 
+            location="New York"/>
+  <employee name="Barbara Jenkins" 
+            department="personnel" 
+            location="Los Angeles"/>
+  <employee name="Cormac O'Donovan" 
+            department="transport"
+            location="New York"/>
+  <employee name="Wesley Thomas" 
+            department="personnel"
+            location="Los Angeles"/>
+  <employee name="Maria Gomez" 
+            department="sales"
+            location="Seattle"/>
+</staff>
+
+

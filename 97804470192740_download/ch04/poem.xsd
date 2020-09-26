@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://poetry.org/ns" xmlns:p="http://poetry.org/ns">
+  <xs:element name="poem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="p:author"/>
+        <xs:element ref="p:date"/>
+        <xs:element ref="p:title"/>
+        <xs:element maxOccurs="unbounded" ref="p:stanza"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="p:name"/>
+        <xs:element ref="p:birth"/>
+        <xs:element ref="p:death"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="birth" type="p:gendate"/>
+  <xs:element name="death" type="p:gendate"/>
+  <xs:element name="date" type="p:gendate"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="stanza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="p:line"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="line" type="xs:string"/>
+  <xs:simpleType name="gendate">
+    <xs:union memberTypes="xs:date xs:gYear xs:gYearMonth"/>
+  </xs:simpleType>
+</xs:schema>

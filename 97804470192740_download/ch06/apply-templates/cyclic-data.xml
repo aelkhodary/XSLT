@@ -1,0 +1,10 @@
+<!DOCTYPE parts [
+  <!ATTLIST part id ID #REQUIRED>
+]>
+<parts>
+  <part id="p05" idref="p10"/>
+  <part id="p10" idref="p20"/>
+  <part id="p20" idref="p30 p40"/>
+  <part id="p30"/>
+  <part id="p40" idref="p10"/>
+</parts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           elementFormDefault="qualified" 
+           targetNamespace="http://mhk.me.uk/some.uri" 
+           xmlns:my="http://mhk.me.uk/some.uri" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:element name="doc" type="my:docType"/>
+  
+    <xs:complexType name="docType">
+      <xs:simpleContent>
+        <xs:extension base="xs:date">
+          <xs:attribute name="security" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+
+  <xs:complexType name="dateType">
+    <xs:simpleContent>
+      <xs:restriction base="my:docType">
+        <xs:minInclusive value="2000-01-01"/>
+      </xs:restriction>
+    </xs:simpleContent>  
+  </xs:complexType>
+</xs:schema>

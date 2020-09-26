@@ -1,0 +1,30 @@
+<persons>
+	<person id='I001'>
+	  <name>Queen Elizabeth II</name>
+	  <spouse ref='I002'/>
+	</person>
+	<person id='I002'>
+	  <name>The Duke of Edinburgh</name>
+	  <spouse ref='I001'/>
+	</person>	
+	<person id='I003'>
+	  <name>Prince Charles</name>
+	  <mother ref='I001'/>
+	  <father ref='I002'/>
+	</person>
+	<person id='I004'>
+	  <name>Princess Royal</name>
+	  <mother ref='I001'/>
+	  <father ref='I002'/>
+	</person>	
+	<person id='I005'>
+	  <name>Prince Andrew</name>
+	  <mother ref='I001'/>
+	  <father ref='I002'/>
+	</person>	
+	<person id='I006'>
+	  <name>Prince Edward</name>
+	  <mother ref='I001'/>
+	  <father ref='I002'/>
+	</person>			
+</persons>	

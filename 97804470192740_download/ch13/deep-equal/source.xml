@@ -1,0 +1,5 @@
+<doc>
+   <e att1='a' att2='b' att3='c'><f/><g/></e>
+   <e att3='C' att1='a' att2='b'><f/></e>
+   <e att3='C' att1='a' att2='b'><f/><g/></e>
+</doc>

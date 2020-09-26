@@ -1,0 +1,19 @@
+When you unzip the code files, the folder the author-created folder structure may disappears. 
+To preserve this structure, do the following: 
+1.	Right-click the zip file and select WinZip and then Extract To.
+2.	Place the directory structure wherever you want on your computer.
+3.	Make sure that the Use Folder Names check box is checked.
+4.	Click Extract.
+
+This zip contains code from every chapter of the book with the exception 
+of Chapter 5 and 14, and Appendixes A-C, and G-H. These chapters/appendixes
+either have no code samples for download or have no downloadable code 
+because the chapter has mostly line code snippets.
+
+There are two loose files that are not included in any of the chapter files:
+othello.xml and poem.xml. Because they are used in running examples in a
+number of different chapters they are included for your convenience.
+
+We hope you have fun with the sample code we have included and that 
+you find it useful and informative. Enjoy.
+

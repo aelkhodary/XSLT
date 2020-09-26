@@ -1,0 +1,44 @@
+<employees>
+  <employee>
+    <name>John Bull</name>
+    <location>
+      <country>gb</country>
+    </location>
+  </employee>
+  <employee>
+    <name>Jacques Dupont</name>
+    <location>
+      <country>fr</country>
+    </location>
+  </employee> 
+  <employee>
+    <name>Fritz Spritz</name>
+    <location>
+      <country>de</country>
+    </location>
+  </employee>  
+  <employee>
+    <name>Franco Zefirelli</name>
+    <location>
+      <country>it</country>
+    </location>
+  </employee> 
+  <employee>
+    <name>Pablo Picasso</name>
+    <location>
+      <country>es</country>
+    </location>
+  </employee> 
+  <employee>
+    <name>Patrick Murphy</name>
+    <location>
+      <country>ie</country>
+    </location>
+  </employee>
+  <employee>
+    <name>Declan O'Reilly</name>
+    <location>
+      <country>ie</country>
+    </location>
+  </employee>  
+</employees>           

@@ -1,0 +1,10 @@
+<departments xmlns="http://ns.megacorp.com/hr">
+  <department dept-nr="D001">
+    <name>Sales</name>
+    <manager-nr>E12345</manager-nr>
+  </department>
+  <department dept-nr="D002">
+    <name>Accounts</name>
+    <manager-nr>E77733</manager-nr>
+  </department>
+</departments>    

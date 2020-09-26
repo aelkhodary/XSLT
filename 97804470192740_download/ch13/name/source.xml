@@ -1,0 +1,4 @@
+<my:doc xmlns:my="some.uri" security="high" xml:id="A23">
+   <!-- comment --> text <?action when="now"?>
+</my:doc>
+

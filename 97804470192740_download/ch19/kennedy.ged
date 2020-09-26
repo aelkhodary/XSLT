@@ -1,0 +1,347 @@
+0 HEAD
+1 SOUR TMG
+2 VERS 4.0d
+1 SUBM @SUB1@
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 DEST GED55
+1 DATE 13 JAN 2004
+2 TIME 10:26
+1 CHAR ANSEL
+0 @SUB1@ SUBM 
+1 NAME Michael Kay
+1 ADDR mhk@mhk.me.uk
+0 @I1@ INDI
+1 REFN 1
+1 NAME John Fitzgerald/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 29 MAY 1917
+2 PLAC Brookline, MA, USA
+1 DEAT
+2 DATE 22 NOV 1963
+2 PLAC Dallas, TX, USA
+2 NOTE Assassinated by Lee Harvey Oswald.
+1 NOTE Educated at Harvard University. Elected Congressman in 1945
+2 CONT aged 29; served three terms in the House of Representatives.
+2 CONT Elected Senator in 1952. Elected President in 1960, the
+2 CONT youngest ever President of the United States.
+1 FAMS @F1@
+1 FAMC @F2@
+0 @I2@ INDI
+1 REFN 2
+1 NAME Jaqueline Lee/Bouvier/
+1 NAME /Kennedy/
+1 NAME /Onassis/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 28 JUL 1929
+2 PLAC Southampton, Long Island, NY, USA
+1 DEAT
+2 DATE 19 MAY 1994
+2 PLAC New York City, NY, USA
+1 BURI
+2 DATE 23 MAY 1994
+2 PLAC Arlington National, VA, USA
+1 FAMS @F1@
+1 FAMS @F3@
+1 FAMC @F4@
+0 @I3@ INDI
+1 REFN 3
+1 NAME John Vernou/Bouvier/III
+1 SEX M
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 FAMS @F4@
+0 @I4@ INDI
+1 REFN 4
+1 NAME Janet Norton/Lee/
+1 SEX F
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 FAMS @F4@
+0 @I5@ INDI
+1 REFN 5
+1 NAME Caroline Bouvier/Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 FEB 2000                  
+1 BIRT
+2 DATE 27 NOV 1957
+2 PLAC New York, NY, USA
+1 FAMC @F1@
+0 @I6@ INDI
+1 REFN 6
+1 NAME John Fitzgerald/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 BIRT
+2 DATE 25 NOV 1960
+2 PLAC Washington, DC, USA
+1 DEAT
+2 DATE 16 JUL 1999
+2 PLAC over the Atlantic Ocean, near Aquinnah, MA, USA
+1 FAMC @F1@
+0 @I7@ INDI
+1 REFN 7
+1 NAME Patrick Bouvier/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 BIRT
+2 DATE 07 AUG 1963
+1 DEAT
+2 DATE 09 AUG 1963
+1 FAMC @F1@
+0 @I8@ INDI
+1 REFN 8
+1 NAME Joseph Patrick/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 BIRT
+2 DATE 06 SEP 1888
+2 PLAC East Boston, MA, USA
+1 DEAT
+2 DATE 16 NOV 1969
+2 PLAC Hyannis Port, MA, USA
+1 FAMS @F2@
+0 @I9@ INDI
+1 REFN 9
+1 NAME Rose Elizabeth/Fitzgerald/
+1 NAME /Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 12 FEB 2000                  
+1 BIRT
+2 DATE 22 JUL 1890
+2 PLAC North End, Boston, MA, USA
+1 DEAT
+2 DATE 22 JAN 1995
+2 PLAC Hyannis Port, MA, USA
+1 FAMS @F2@
+0 @I10@ INDI
+1 REFN 10
+1 NAME Joseph Patrick/Kennedy/Jr
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 25 JUL 1915
+1 DEAT
+2 DATE 12 AUG 1944
+2 NOTE Died when his bomber blew up over the English Channel
+1 FAMC @F2@
+0 @I11@ INDI
+1 REFN 11
+1 NAME Rosemary/Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 13 SEP 1918
+1 EVEN
+2 TYPE Illness
+2 DATE 1941
+2 NOTE Institutionalised since 1941 "because of retardation and a
+3 CONT failed lobotomy"
+1 FAMC @F2@
+0 @I12@ INDI
+1 REFN 12
+1 NAME Kathleen Agnes/Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 20 FEB 1920
+1 DEAT
+2 DATE 13 MAY 1948
+2 NOTE Died in a plane crash.
+1 FAMC @F2@
+0 @I13@ INDI
+1 REFN 13
+1 NAME Eunice Mary/Kennedy/
+1 NAME /Shriver/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 10 JUL 1921
+2 PLAC Brookline, MA, USA
+1 FAMS @F5@
+1 FAMC @F2@
+0 @I14@ INDI
+1 REFN 14
+1 NAME Robert Sargent/Shriver/Jr
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F5@
+0 @I15@ INDI
+1 REFN 15
+1 NAME Aristotle/Onassis/
+1 SEX M
+1 CHAN
+2 DATE 13 FEB 2000                  
+1 FAMS @F3@             
+0 @I17@ INDI
+1 REFN 17
+1 NAME Patricia/Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 06 MAY 1924
+1 FAMS @F6@
+1 FAMC @F2@
+0 @I18@ INDI
+1 REFN 18
+1 NAME Peter/Lawford/
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F6@
+0 @I19@ INDI
+1 REFN 19
+1 NAME Robert Francis/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 20 NOV 1925
+1 DEAT
+2 DATE 06 JUN 1968
+1 FAMS @F7@
+1 FAMC @F2@
+0 @I20@ INDI
+1 REFN 20
+1 NAME Ethel/Skakel/
+1 NAME /Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F7@
+0 @I21@ INDI
+1 REFN 21
+1 NAME Jean Ann/Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 20 FEB 1928
+1 FAMS @F8@
+1 FAMC @F2@
+0 @I22@ INDI
+1 REFN 22
+1 NAME Stephen Edward/Smith/
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F8@
+0 @I23@ INDI
+1 REFN 23
+1 NAME Edward Moore/Kennedy/
+1 SEX M
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 BIRT
+2 DATE 22 FEB 1932
+1 FAMS @F9@
+1 FAMS @F10@
+1 FAMC @F2@
+0 @I24@ INDI
+1 REFN 24
+1 NAME Virginia Joan/Bennett/
+1 NAME /Kennedy/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F9@
+0 @I25@ INDI
+1 REFN 25
+1 NAME Victoria/Reggie/
+1 SEX F
+1 CHAN
+2 DATE 13 JAN 2004                  
+1 FAMS @F10@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I5@
+1 CHIL @I6@
+1 CHIL @I7@
+1 MARR
+2 DATE 12 SEP 1953
+2 PLAC Newport, RI, USA
+2 SOUR @S2@
+3 PAGE http://www.jfklibrary.org/jbkwed.htm
+0 @F2@ FAM
+1 HUSB @I8@
+1 WIFE @I9@
+1 CHIL @I10@
+1 CHIL @I1@
+1 CHIL @I11@
+1 CHIL @I12@
+1 CHIL @I13@
+1 CHIL @I17@
+1 CHIL @I19@
+1 CHIL @I21@
+1 CHIL @I23@
+1 MARR
+2 DATE 07 OCT 1914
+2 PLAC Boston, MA, USA
+0 @F3@ FAM
+1 HUSB @I15@
+1 WIFE @I2@
+1 MARR
+2 DATE AFT 1964
+0 @F4@ FAM
+1 HUSB @I3@
+1 WIFE @I4@
+1 CHIL @I2@
+0 @F5@ FAM
+1 HUSB @I14@
+1 WIFE @I13@
+1 MARR
+2 DATE 23 MAY 1953
+2 PLAC New York, NY, USA
+2 NOTE They had five children including the TV journalist Maria
+3 CONT Shriver
+0 @F6@ FAM
+1 HUSB @I18@
+1 WIFE @I17@
+1 MARR
+2 DATE 24 APR 1954
+0 @F7@ FAM
+1 HUSB @I19@
+1 WIFE @I20@
+1 MARR
+2 DATE 17 JUN 1950
+2 NOTE They had 11 children
+0 @F8@ FAM
+1 HUSB @I22@
+1 WIFE @I21@
+1 MARR
+2 DATE 19 MAY 1956
+0 @F9@ FAM
+1 HUSB @I23@
+1 WIFE @I24@
+1 MARR
+2 DATE 29 NOV 1958
+1 DIV
+2 DATE 1984
+0 @F10@ FAM
+1 HUSB @I23@
+1 WIFE @I25@
+1 MARR
+2 DATE 1992
+0 @S2@ SOUR
+1 TITL JFK Library, Url: http://www.jfklibrary.org/jbkwed.htm
+1 ABBR JFK Library
+0 TRLR

@@ -1,0 +1,76 @@
+<html>
+<head>
+<style type="text/css">
+body {font-family:Tahoma,Verdana,Arial,sans-serif; font-size:14px}
+.head {font-family:Tahoma,Verdana,Arial,sans-serif; font-size:18px; font-weight:bold}
+</style>
+
+<script language="JScript">
+<!--
+
+function transformFiles(strStylesheetName) {
+
+  // get a reference to the results DIV element
+  var objResults = document.all['divResults'];
+
+  // create two new document instances
+  var objXML = new ActiveXObject('MSXML2.DOMDocument.3.0');
+  var objXSL = new ActiveXObject('MSXML2.DOMDocument.3.0');
+
+  // set the parser properties
+  objXML.validateOnParse = true;
+  objXSL.validateOnParse = true;
+
+  // load the XML document and check for errors
+  objXML.load('tables_data.xml');
+  if (objXML.parseError.errorCode != 0) {
+    // error found so show error message and stop
+    objResults.innerHTML = showError(objXML)
+    return false;
+  }
+
+  // load the XSL stylesheet and check for errors
+  objXSL.load(strStylesheetName);
+  if (objXSL.parseError.errorCode != 0) {
+    // error found so show error message and stop
+    objResults.innerHTML = showError(objXSL)
+    return false;
+  }
+
+  // all must be OK, so perform transformation
+  strResult = objXML.transformNode(objXSL);
+
+  // and display the results in the DIV element
+  objResults.innerHTML = strResult;
+  return true;
+}
+
+function showError(objDocument) {
+  // create the error message
+  var strError = new String;
+  strError = 'Invalid XML file !<BR />'
+           + 'File URL: ' + objDocument.parseError.url + '<BR />'
+           + 'Line No.: ' + objDocument.parseError.line + '<BR />'
+           + 'Character: ' + objDocument.parseError.linepos + '<BR />'
+           + 'File Position: ' + objDocument.parseError.filepos + '<BR />'
+           + 'Source Text: ' + objDocument.parseError.srcText + '<BR />'
+           + 'Error Code: ' + objDocument.parseError.errorCode + '<BR />'
+           + 'Description: ' + objDocument.parseError.reason
+  return strError;
+}
+
+//-->
+</script>
+
+</head>
+<body onload="transformFiles('tables_list.xsl')">
+<p><span class="head">Transforming an XML Document using client-side code</span></p>
+View the tables as a &nbsp; <button onclick="transformFiles('tables_catalog.xsl')">Catalog</button>
+&nbsp; or as a &nbsp; <button onclick="transformFiles('tables_list.xsl')">Simple List</button>
+<hr />
+
+<!-- to insert the results of the XSLT transformation -->
+<div id="divResults"></div>
+
+</body>
+</html>

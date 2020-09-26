@@ -1,0 +1,29 @@
+<?xml version="1.0"?><poem xmlns="http://poetry.org/ns" xsi:schemaLocation="http://poetry.org/ns poem.xsd"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <author>
+     <name>Rupert Brooke</name>
+     <birth>1887-08-03</birth>
+     <death>1915-04-23</death>
+   </author>
+   <date>1912</date>
+   <title>The Hill</title>
+   <stanza>
+      <line>Breathless, we flung us on the windy hill,</line>
+      <line>Laughed in the sun, and kissed the lovely grass.</line>
+      <line>You said "Through glory and ecstasy we pass;</line>
+      <line>Wind, sun, and earth remain, and birds sing still,</line>
+      <line>When we are old, are old...." "And when we die</line>
+      <line>All's over that is ours; and life burns on</line>
+      <line>Through other lovers, other lips" said I,</line>
+      <line>"Heart of my heart, our heaven is now, is won!"</line>
+   </stanza>
+   <stanza>
+      <line>We are Earth's best, that learnt her lesson here.</line>
+      <line>Life is our cry. We have kept the faith!" we said;</line>
+      <line>"We shall go down with unreluctant tread</line>
+      <line>Rose-crowned into the darkness!".... Proud we were,</line>
+      <line>And laughed, that had such brave true things to say.</line>
+      <line>-- And then you suddenly cried, and turned away.</line>
+  </stanza>
+</poem>
+

@@ -1,0 +1,9 @@
+  <html>
+    <head>
+      <title>The book</title>
+    </head>
+    <body>
+      <preface/>
+      <p>The rest of the book.</p>
+    </body>
+  </html>

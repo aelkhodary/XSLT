@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:element name="person">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="first"/>
+        <xs:element ref="middle"/>
+        <xs:element ref="last"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" nillable="true" type="xs:NCName"/>
+  <xs:element name="first"  nillable="true" type="xs:NCName"/>
+  <xs:element name="middle" nillable="true" type="xs:NCName"/>
+  <xs:element name="last"  nillable="true" type="xs:NCName"/>
+</xs:schema>

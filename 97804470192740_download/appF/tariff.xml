@@ -1,0 +1,5 @@
+<tariff>
+   sum(call[@time &gt; 08.00 and @time &lt; 18.00]/@duration) * 1.50 +
+   sum(call[@time &lt; 08.00 or @time &gt; 18.00]/@duration) * 2.50 
+</tariff>
+

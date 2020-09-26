@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<doc>
+  <msg code="123" xml:lang="de">Herzliche Gluckwünsche zum Geburtstag!</msg>
+  <msg code="123" xml:lang="en">Many happy returns on your birthday!</msg>
+  <msg code="123" xml:lang="fr">Félicitations sur votre anniversaire!</msg>
+</doc>  

@@ -1,0 +1,8 @@
+<staff>
+  <employee name="John Jones" department="sales"/>
+  <employee name="Barbara Jenkins" department="personnel"/>
+  <employee name="Cormac O'Donovan" department="transport"/>
+  <employee name="Wesley Thomas" department="personnel"/>
+  <employee name="Maria Gomez" department="sales"/>
+</staff>
+

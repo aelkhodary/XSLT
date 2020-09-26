@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<tables>
+
+<table>
+  <table-name>Conference</table-name>
+  <number-of-legs>4</number-of-legs>
+  <table-top-material type="laminate">Ash</table-top-material>
+  <table-shape>Oblong</table-shape>
+  <retail-price currency="USD">1485</retail-price>
+</table>
+
+<table>
+  <table-name>Windsor</table-name>
+  <number-of-legs>8</number-of-legs>
+  <table-top-material type="laminate">Beech</table-top-material>
+  <table-shape>Oval</table-shape>
+  <retail-price currency="USD">1975</retail-price>
+</table>
+
+<table>
+  <table-name>Modern</table-name>
+  <number-of-legs>4</number-of-legs>
+  <table-top-material type="laminate">Natural</table-top-material>
+  <table-shape>Round</table-shape>
+  <retail-price currency="USD">1295</retail-price>
+</table>
+
+</tables>
